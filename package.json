@@ -7,7 +7,13 @@
     "dev": "mastra dev",
     "build": "mastra build",
     "init-kb": "tsx src/scripts/initKnowledgeBase.ts",
-    "test-libsql": "tsx src/scripts/testLibSQL.ts"
+    "test-libsql": "tsx src/scripts/testLibSQL.ts",
+    "test-postgres": "tsx src/scripts/testPostgres.ts",
+    "test-db": "tsx src/scripts/testLibSQL.ts",
+    "setup": "node scripts/setup.js",
+    "db:migrate": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:studio": "prisma studio"
   },
   "keywords": [],
   "author": "",
@@ -20,23 +26,30 @@
   "dependencies": {
     "@ai-sdk/deepseek": "^0.2.14",
     "@ai-sdk/openai": "^1.3.22",
-    "@mastra/core": "0.10.10",
-    "@mastra/deployer-cloudflare": "^0.1.23",
+    "@libsql/client": "^0.15.9",
+    "@mastra/core": "0.1.15",
     "@mastra/libsql": "0.0.3",
     "@mastra/memory": "0.2.0",
     "@mastra/pg": "^0.12.1",
-    "@mastra/rag": "^1.0.1",
-    "@opentelemetry/api": "^1.9.0",
-    "@opentelemetry/instrumentation": "^0.202.0",
-    "@opentelemetry/resources": "^2.0.1",
+    "@mastra/rag": "0.1.15",
+    "@prisma/client": "^6.10.1",
     "ai": "^4.3.16",
     "dotenv": "^16.5.0",
+    "mammoth": "^1.6.0",
+    "openai": "^4.20.1",
+    "pdf-parse": "1.1.1",
+    "pg": "^8.16.3",
+    "pgvector": "^0.2.0",
     "tsx": "^4.20.3",
+    "uuid": "9.0.1",
     "zod": "^3.25.3"
   },
   "devDependencies": {
     "@types/node": "^22.15.19",
-    "mastra": "^0.6.3",
+    "@types/pg": "^8.15.4",
+    "@types/uuid": "^9.0.7",
+    "mastra": "0.1.15",
+    "prisma": "^6.10.1",
     "typescript": "^5.8.3"
   }
 }
